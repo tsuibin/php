@@ -1,0 +1,74 @@
+显示公告信息
+<?php
+
+  $sql=mysql_query("select * from gonggao order by time desc limit 0,5",$conn);
+
+  $info=mysql_fetch_array($sql);              //查询最新5条公告
+
+        if($info==false)
+
+     {
+
+?>
+
+    <tr>
+
+    <td width="10" height="5">&nbsp;</td>
+
+    <td height="20" colspan="2"><div align="left">本站暂无公告!</div></td>
+
+    </tr>
+
+    <?php
+
+        }                               //如果管理人员没有发布公告则给出提示信息
+
+else
+
+        {
+
+        do{
+
+    ?>
+
+    <tr>
+
+    <td width="10" height="5"><div align="center">-</div></td>
+
+    <td width="109" height="20"><div align="left">
+
+    <a href="showgg.php?id=<?php echo $info[id];?>">
+
+    <?php 
+
+        echo substr($info[title],0,14);       //显示公告主题的前7个字
+
+        if(strlen($info[title])>14)
+
+        {
+
+        echo "...";                     //如果公告主题大于7个字,则显示完7个字后显示"…"
+
+        } 
+
+        ?>
+
+    </a>
+
+    </div>
+
+    </td>
+
+    <td width="61"><div align="right"><?php echo $info[time];?></div></td>
+
+    </tr>
+
+    <?php
+
+          }
+
+          while($info=mysql_fetch_array($sql));
+
+          }
+
+    ?>

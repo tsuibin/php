@@ -1,0 +1,43 @@
+<img src="one.gif" onclick="show(this)">
+
+
+<br>
+
+<div id="a">
+	aaaaaaaaaaaaaaaaaaaaaaa<br>
+	aaaaaaaaaaaaaaaaaaaaaaa<br>
+	aaaaaaaaaaaaaaaaaaaaaaa<br>
+	aaaaaaaaaaaaaaaaaaaaaaa<br>
+	aaaaaaaaaaaaaaaaaaaaaaa<br>
+	aaaaaaaaaaaaaaaaaaaaaaa<br>
+	aaaaaaaaaaaaaaaaaaaaaaa<br>
+	aaaaaaaaaaaaaaaaaaaaaaa<br>
+
+</div>	
+
+
+<script>
+	function show(obj)
+	{
+		var tagobj=document.getElementById("a");		
+
+		var strtu=obj.src;
+
+		var loc=strtu.lastIndexOf("/")+1;
+			
+		imgname=strtu.substr(loc);
+	
+
+		if(imgname=="one.gif")
+		{
+			obj.src="two.gif";
+			tagobj.style.display="none";
+		}else
+		{
+			obj.src="one.gif";
+			tagobj.style.display="block";
+		}
+		
+	}
+
+</script>	

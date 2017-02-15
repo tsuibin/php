@@ -1,0 +1,29 @@
+<input type="button" value="Ë¢ÐÂ" onclick="show()">
+
+<script>
+function show()
+{
+	window.top.frames[5].location.reload();
+	window.top.frames["five"].location.reload();
+
+	window.top.frames.item(5).location.reload();
+
+	window.top.frames.item("five").location.reload();
+
+	window.top.five.location.reload();
+
+	window.top["five"].location.reload();
+
+	window.top.item("five").location.reload();
+}
+
+window.document.write("#############");
+
+
+window.parent.parent.frames[1].document.write("1111111111111");
+window.parent.parent.frames[2].document.write("22222222222222");
+window.parent.parent.frames[3].document.write("33333333333333");
+window.parent.parent.frames[4].document.write("44444444444444");
+
+
+</script>	

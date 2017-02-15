@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title> new document </title>
+  <meta name="generator" content="editplus" />
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <script type="text/javascript">
+	/**
+	 * 当前激活
+	 */
+	var activeNow = 1;
+	//自动运行
+	window.onload=function(){
+		//reset(activeNow);
+		ajaxLoad(1,document.getElementById('list'));
+	}
+	/**
+	 * 显示指定数据
+	 */
+	function show(id,stats){
+		clearTimeout();
+		activeNow=id;
+		reset();
+		document.getElementById("img_"+id+"").src='http://www.2008ly.com/images/index_23_'+id+'_'+stats+'.jpg';
+		setTimeout("ajaxLoad("+id+",document.getElementById('list'))",500);
+	}
+	/**
+	 * 重置按钮
+	 */
+	function reset(){
+		document.getElementById("img_1").src='http://www.2008ly.com/images/index_23_1_2.jpg';
+		document.getElementById("img_2").src='http://www.2008ly.com/images/index_23_2_2.jpg';
+	}
+	/**
+	 * ajax加载
+	 */
+	function ajaxLoad(id,obj){
+		if(window.XMLHttpRequest) {
+			var XHR = new XMLHttpRequest();
+		} else if (window.ActiveXObject) {
+				var XHR = new ActiveXObject("Microsoft.XMLHTTP");
+		}
+		XHR.open("GET","getData.php?id="+id+"",true);
+		XHR.onreadystatechange = requestData;
+		XHR.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+		XHR.send(null);	
+
+		function requestData() {
+			if(XHR.readyState == 4) {
+				//document.getElementById("test").innerHTML="数据加载中...";
+				if(XHR.status == 200) {
+					//alert(XHR.responseText);
+					obj.innerHTML=XHR.responseText;
+					
+				}
+			}
+		}
+	}
+  </script>
+  <style type="text/css">
+  #list {
+	  font-size:12px;
+	  text-align:left;
+  }
+  #list a {
+	text-decoration:none;
+	color:#000;
+  }
+  #list a:hover {
+	  color:#000;
+  }
+  #list th {
+	  background-color:#dcf2ff;
+  }
+  #list td {
+	  border-bottom:1px dashed #DCF2FF;
+  }
+  #list {
+	  background-image:url(http://www.2008ly.com/images/index_24.gif);
+	  padding:0px 8px;
+  }
+  </style>
+ </head>
+
+ <body>
+ 
+  <table width="217" cellspacing="0" cellpadding="0">
+	<tr>
+		<td onmouseover="show(1,1);" ><img id="img_1" width="115" height="42" src="http://www.2008ly.com/images/index_23_1_1.jpg" /></td>
+		<td onmouseover="show(2,1);" ><img id="img_2" width="117" height="42" src="http://www.2008ly.com/images/index_23_2_2.jpg" /></td>
+	</tr>
+	<tr>
+		<td colspan="2">
+		<div id="list" >
+		</div>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2"><img src="http://www.2008ly.com/images/index_25.gif"/></td>
+	</tr>
+  </table>
+ </body>
+</html>

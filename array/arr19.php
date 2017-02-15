@@ -1,0 +1,15 @@
+<?php 
+	$arr=range("a","f",1);
+	
+	$i=array_rand($arr);
+	
+	//echo $arr[$i];
+	
+	$img=array("01.jpg","a.jpg","yy.jpg","cat.jpg");
+	
+	shuffle($img);//Ëæ»úÅÅÐòÊý×é
+	
+	print_r($img);
+	
+	//print_r($arr);
+?>

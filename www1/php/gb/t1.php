@@ -1,0 +1,12 @@
+<?php
+$page=10;
+for($i=0;$i<$page;$i++)
+{
+	$i+=1;
+	$pagearr[].=$i;
+	$i-=1;
+}
+//print_r($pagearr);
+$p=10;
+var_dump(in_array($p,$pagearr));
+?>

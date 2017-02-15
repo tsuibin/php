@@ -1,0 +1,24 @@
+<div name="one"  onclick="show(this)">aaaaaaaaaaa</div>
+
+<a  name="two" onclick="show(this)">bbbbbbbbbbbb</a><br>
+
+<h1 name="three" onclick="show(this)">cccccccccccccccc</h1>
+
+<p  name="four" onclick="show(this)">dddddddddddddddd</p>
+
+<tr name="five"  onclick="show(this)">bbbbbbbbbbb</tr><br>
+
+
+<script>
+function show(obj)
+{
+
+
+	alert("tagname:"+obj.tagName+", tagname name:"+obj.name+", tag content:"+obj.innerText);
+
+	obj.style.backgroundColor="yellow";
+	obj.style.color="red";
+	obj.style.display="none";
+}
+
+</script>	

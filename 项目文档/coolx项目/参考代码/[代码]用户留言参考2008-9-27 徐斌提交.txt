@@ -1,0 +1,28 @@
+用户留言页面的关键代码如下：
+
+
+<?php
+
+  $title=$_POST[title];
+
+  $content=$_POST[content];                          //提取用户留言主题及内容
+
+  $time=date("Y-m-j");                                //获得用户留言时间
+
+  include("conn.php");                                //包含数据库连接文件
+
+  session_start();   
+
+  $sql=mysql_query("select * from user where name='".$_SESSION[username]."'",$conn);
+
+  $info=mysql_fetch_array($sql);   
+
+  $userid=$info[id];                                  //获得留言者id
+
+  mysql_query("insert into leaveword (title,content,time,userid) values 
+
+  ('$title','$content','$time','$userid')",$conn);              //保存用户留言信息
+
+  header("location:userleaveword.php");                 //重新定位到留言页面
+
+?>

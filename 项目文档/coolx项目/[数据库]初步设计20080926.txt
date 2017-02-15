@@ -1,0 +1,26 @@
+数据库表名
+tb_adv
+	广告编号	AdvNo tinyint
+  		 
+tb_copyright		 
+tb_agreement		 
+tb_public		 
+
+tb_member 		 
+tb_message 		 
+	
+tb_product 		
+
+
+tb_feedback 		 
+tb_help			
+
+tb_bizlog		
+tb_order		
+
+
+
+
+tb_cate			
+tb_catedesc		
+tb_session	

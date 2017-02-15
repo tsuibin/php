@@ -1,0 +1,29 @@
+<?php
+
+include("conn.php");
+
+$id=$_GET[id];
+
+$sql=mysql_query("select * from user where id=".$id."",$conn);
+
+$info=mysql_fetch_array($sql);                    //从数据库中提取dongjie标记的值
+
+if($info[dongjie]==0)                            //判断当前用户状态
+
+   {
+
+     mysql_query("update user set dongjie=1",$conn);
+
+   }                                         //如果该用户未被冻结，则冻结该用户解冻
+
+ else
+
+   {
+
+     mysql_query("update user set dongjie=0",$conn); 
+
+   }                                         //如果该用户已被冻结，则解冻该用户
+
+ header("location:lookuserinfo.php?id=".$id."");   
+
+?

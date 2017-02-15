@@ -1,0 +1,38 @@
+<style>
+	.one {
+		background:red;
+		color:yellow;
+		font-size:3cm;
+	}
+
+	.two {
+		background:yellow;
+		color:red;
+		font-size:4cm;
+	}
+
+</style>
+
+<div id="first"  onclick="show()"  class="one">aaaaaaaaaaaaaaa</div>
+
+<div id="second" onclick="show()"  class="two">bbbbbbbbbbbbbb</div>
+
+<script>
+var f=document.getElementById("first");
+var s=document.getElementById("second");
+
+function show()
+{
+	if(f.className=="one")
+	{
+		f.className="two";
+		s.className="one";
+	}else
+	{
+		f.className="one";
+		s.className="two";
+	}
+}
+
+
+</script>	

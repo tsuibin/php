@@ -1,0 +1,70 @@
+<form>
+<ul style="list-style:none">
+	<script>
+	for(var i=0; i<20; i++)
+	{
+		document.write('<li>'+i+' <input type="checkbox" name="del[]">aaaaaaaaaaaaaaaaaaaa</li>');
+	}
+	</script>
+</ul>
+</form>	
+<a href="javascript:selectAll()">全选</a> | <a href="javascript:noselectAll()">全不选</a> | <a href="javascript:fan()">反选</a> | <a href="javascript:delete1()" onclick="return isdel()">删除选中的</a>
+<script>
+	function isdel()
+	{
+		var flag=window.confirm("确定删除选中的记录吗?");
+
+		if(flag)
+		{
+			return true;
+		}else
+		{
+			return false;
+		}
+	}
+
+	var checkboxArr=document.getElementsByName("del[]");
+
+	function selectAll()
+	{
+		for(var i=0; i<checkboxArr.length; i++)
+		{
+			checkboxArr[i].checked=true;
+		}
+		
+	}	
+
+	function noselectAll()
+	{
+		for(var i=0; i<checkboxArr.length; i++)
+		{
+			checkboxArr[i].checked=false;
+		}
+		
+	}
+
+	function fan()
+	{
+		for(var i=0; i<checkboxArr.length; i++)
+		{
+			if(checkboxArr[i].checked)
+			{
+				checkboxArr[i].checked=false;
+			}else{
+				checkboxArr[i].checked=true;
+			}
+
+		}
+	}
+
+function delete1()
+{
+		for(var i=0; i<checkboxArr.length; i++)
+		{
+			if(checkboxArr[i].checked)
+			{
+				checkboxArr[i].parentElement.style.display="none";
+			}
+		}
+}
+</script>	

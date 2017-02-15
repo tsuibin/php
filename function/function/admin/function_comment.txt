@@ -1,0 +1,12 @@
+$num=$_GET['num']
+
+$c="cked{$num}";
+$$c="checked='checked'";
+
+
+
+echo $cked1
+echo $cked2
+
+
+update from func_function set func_name='date',ftype_id='2',func_breif='日期函数 ',func_origin='date',func_return='3 5 7 9',func_level='5',func_detail='详细说明',func_other='time' where func_id=1 bool(false) 

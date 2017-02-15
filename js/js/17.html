@@ -1,0 +1,48 @@
+
+
+<div style="position:absolute; top:170px; left:170px">
+<div style="position:absolute; top:150px; left:50px">
+<img id="one" style="position:absolute; top:100px; left:100px"  src="xiang.gif">
+</div>
+</div>
+
+<div id="two" style="position:absolute;">这是一头大象</div>
+<script>
+	var obj=document.getElementById("one");
+	var bit=document.getElementById("two");
+
+
+
+	bit.style.left=getl(obj);
+	bit.style.top=gett(obj)+obj.height;
+
+
+	function getl(obj)
+	{
+		var wid=0;
+		
+		if(obj!=null)
+		{
+
+			wid=obj.offsetLeft+getl(obj.parentElement);
+		}	
+
+		return wid;
+	}
+
+	function gett(obj)
+	{
+		var wid=0;
+		
+		if(obj!=null)
+		{
+
+			wid=obj.offsetTop+gett(obj.parentElement);
+		}	
+
+		return wid;
+	}
+
+
+
+</script>	

@@ -1,0 +1,332 @@
+/* Project Babel
+*  Author: Livid Torvalds
+*  File: /htdocs/css_extra.css
+*  Usage: Style for extra decorations
+*  Format: 1 tab indent(4 spaces), LF, UTF-8, no-BOM
+*
+*  Subversion Keywords:
+*
+*  $Id: css_extra.css 285 2007-09-30 13:26:31Z v2ex.livid $
+*  $LastChangedDate: 2007-09-30 21:26:31 +0800 (Sun, 30 Sep 2007) $
+*  $LastChangedRevision: 285 $
+*  $LastChangedBy: v2ex.livid $
+*/
+
+dl.home_topic {
+padding: 0px;
+background-color: #FFF;
+margin-top: 5px;
+font-size: 12px;
+}
+
+dl.home_topic dt {
+height: 30px;
+padding: 3px 3px 14px 3px;
+background-color: #F9F9F9;
+border-right: 1px solid #DDD;
+border-bottom: 1px solid #DDD;
+}
+
+dl.home_topic dd {
+padding: 5px 10px 0px 10px;
+margin: 0px;
+color: #333;
+line-height: 18px;
+}
+
+a.tpc, a.tpc:link, a.tpc:visited {
+color: #0063DC;
+text-decoration: none;
+border-bottom: none;
+font-size: 12px;
+}
+
+a.tg:link, a.tg:visited {
+color: #333;
+text-decoration: none;
+font-size: 12px;
+}
+
+a.tg:hover {
+color: #000;
+background-color: #EEE;
+text-decoration: none;
+font-size: 12px;
+}
+
+a.tg:active {
+color: #FFF;
+background-color: #577DE4;
+text-decoration: none;
+font-size: 12px;
+}
+
+a.t, a.t:link, a.t:visited {
+color: #0063DC;
+text-decoration: none;
+font-size: 12px;
+}
+
+a.t:hover, a.tpc:hover {
+color: #FFF;
+background-color: #0063DC;
+text-decoration: none;
+font-size: 12px;
+}
+
+a.t:active, a.tpc:active {
+color: #FFF;
+background-color: #333;
+text-decoration: none;
+font-size: 12px;
+}
+
+span.tip_h {
+font-size: 12px;
+color: #F0F0F0;
+opacity: .3;
+-moz-opacity: .3;
+filter: opacity(alpha=30%);
+}
+
+div#top_banner {
+background-color: #000;
+border-bottom: 1px solid #444;
+height: 75px;
+}
+
+div#nav {
+color: #CCC;
+font-size: 12px;
+clear: both;
+height: 21px;
+padding: 0px 20px 0px 20px;
+text-align: center;
+background-color: #FFF;
+border-bottom: 1px solid #888;
+background-image: url("/img/bg_menu.gif");
+}
+
+div#nav a.top:link, a.top:visited {
+text-align: left;
+color: #000;
+padding: 3px 0px 4px 0px;
+text-decoration: none;
+}
+
+div#nav a.top:hover {
+color: #FFF;
+padding: 3px 0px 4px 0px;
+text-decoration: none;
+background-color: #667;
+background-image: url("/img/fall_navy.gif");
+}
+
+div#nav a.top:active {
+color: #FFF;
+padding: 3px 0px 4px 0px;
+text-decoration: none;
+background-color: #333;
+background-image: url("/img/fall_dark.gif");
+}
+
+div#nav a.nav:link, a.nav:visited {
+color: #000;
+text-decoration: none;
+}
+
+div#nav a.nav:hover {
+color: #FFF;
+text-decoration: none;
+background-color: #667;
+background-image: url("/img/fall_navy.gif");
+}
+
+div#nav a.nav:active {
+color: #FFF;
+text-decoration: none;
+background-color: #333;
+background-image: url("/img/fall_dark.gif");
+}
+
+#nav_menu, #nav_menu ul {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+#nav_menu a.top {
+	display: block;
+}
+
+#nav_menu a.nav {
+	display: block;
+	padding-top: 2px;
+	height: 17px;
+	width: 14em;
+}
+
+#nav_menu li {
+	float: left;
+}
+
+#nav_menu li ul li .sep {
+	background-image: url("/img/mid.gif");
+	height: 11px;
+	display: block;
+	width: 14em;
+}
+
+#nav_menu li ul {
+	display: block;
+	position: absolute;
+	width: 14em;
+	left: -999em;
+	-moz-opacity: .9;
+	opacity: .9;
+	filter: alpha(opacity=90);
+	background-color: #FFF;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	border-bottom: 1px solid #CCC;
+	border-right: 1px solid #CCC;
+	border-left: 1px solid #CCC;
+	z-index: 99;
+}
+
+#nav_menu li.top:hover, #nav_menu li.sfhover {
+	background-image: url("/img/fall_navy.gif");
+}
+
+#nav_menu li:hover a.top, #nav_menu li.sfhover a.top {
+	color: #FFF;
+}
+
+#nav_menu li:hover ul, #nav_menu li.sfhover ul {
+	left: auto;
+}
+
+#nav_menu li ul li a {
+text-align: left;
+padding: 2px 0px 2px 0px;
+}
+
+#nav_menu li ul li a:hover {
+text-align: left;
+padding: 2px 0px 2px 0px;
+background-color: #667;
+color: #FFF;
+background-image: url("/img/fall_navy.gif");
+}
+
+#nav_menu li ul li a:active {
+text-align: left;
+padding: 2px 0px 2px 0px;
+background-color: #333;
+color: #FFF;
+background-image: url("/img/fall_dark.gif");
+}
+
+div.url_item {
+margin-top: 5px;
+padding: 5px 5px 2px 5px;
+font-size: 14px;
+}
+
+div.url_toolbar {
+padding: 1px 5px 5px 5px;
+}
+
+a.regular:link, a.regular:visited, a.regular:active {
+color: #676777;
+text-decoration: none;
+}
+
+a.regular:hover {
+color: #90909F;
+text-decoration: underline;
+}
+
+.pages {
+    padding: 5px;
+    margin: 5px 0px;
+    font-size: 85%;
+}
+
+.pages a, .pages span {
+    display: block;
+    float: left;
+    padding: 0.2em 0.5em;
+    margin-right: 0.1em;
+    border: 1px solid #fff;
+    background: #fff;
+}
+
+.pages span.current {
+    border: 1px solid #2E6AB1;
+    font-weight: bold;
+    background: #2E6AB1;
+    color: #fff;
+}
+
+.pages a {
+    border: 1px solid #9AAFE5;
+    text-decoration: none;
+    color: #105CB6;
+    outline: none;
+}
+
+.pages a:hover {
+    border-color: #2E6AB1;
+}
+
+.pages a.nextprev {
+    font-weight: bold;
+}
+
+.pages span.nextprev {
+    color: #666;
+}
+
+.pages span.nextprev {
+        border: 1px solid #ddd;
+        color: #999;
+}
+
+a.btn:link, a.btn:visited {
+background-color: #D7D7E7;
+padding: 2px 4px 5px 2px;
+text-decoration: none;
+color: #000;
+-moz-border-radius: 3px;
+border-right: 1px solid #AAB;
+border-bottom: 1px solid #AAB;
+}
+
+a.btn:hover {
+background-color: #474757;
+padding: 2px 4px 5px 2px;
+text-decoration: none;
+color: #FFF;
+-moz-border-radius: 3px;
+border-right: 1px solid #334;
+border-bottom: 1px solid #334;
+}
+
+a.btn:active {
+background-color: #777787;
+padding: 2px 4px 5px 2px;
+text-decoration: none;
+color: #FFF;
+-moz-border-radius: 3px;
+border-right: 1px solid #334;
+border-bottom: 1px solid #334;
+}
+
+h1.silver {
+background-image: url("/d/img/h1_bg.png");
+padding: 5px 5px 5px 5px;
+margin: 0px 0px 5px 0px;
+font-size: 14px;
+font-weight: bold;
+}

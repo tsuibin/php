@@ -1,0 +1,5 @@
+adv.php 		admin_adv.php		管理广告
+pub.php 		admin_pub.php		管理公告
+cat.php			admin_cat.php		管理分类
+copyright.php 		admin_copyright.php	管理版权
+bizlog.php

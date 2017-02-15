@@ -1,0 +1,28 @@
+<textarea rows="500" cols="500" ID="Textarea1" NAME="Textarea1">
+	将这个文本框设置得很大，以便浏览器窗口中出现滚动条
+</textarea>
+<div id=float_icon style="VISIBILITY: hidden; POSITION: absolute; LEFT=0;TOP=0">
+	<a href="http://www.thizlinux.com.cn" target="_blank"><img src="xiang.gif" border="0"></a>
+</div>
+<script language="javascript">
+	var dirX=1,dirY = 1;
+	var xPos = 0,yPos = 0;
+	//为开阔读者的知识面，下面使用了多种形式来引用float_icon对象
+	float_icon.style.top = 0;	
+	document.body.all.float_icon.style.left = 0;
+	document.body.all("float_icon").style.visibility = "visible";
+	window.setInterval("moveIcon()",100);
+	function moveIcon()
+	{
+		//每次移动2个像素
+		xPos += 5*dirX;
+		yPos += 5*dirY;
+		float_icon.style.top = yPos + document.body.scrollTop;
+		float_icon.style.left = xPos + document.body.scrollLeft;
+		/*下面代码实现当图标碰到到窗口边界时，改变图标移动的方向。如果图标左边位置加上图标宽度的结果大于窗体客户区宽度，就表示图标已碰到窗口右边界*/
+		if(xPos<=0 || xPos+float_icon.offsetWidth>=document.body.clientWidth)
+			dirX = -dirX;
+		if(yPos<=0 || yPos+float_icon.offsetHeight>=document.body.clientHeight)
+			dirY = -dirY;
+	}	
+</script>

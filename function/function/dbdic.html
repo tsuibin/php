@@ -1,0 +1,386 @@
+<h2><A id="数据字典">数据字典</h2>
+<h3><A id="contents表">contents表</h3>
+<p> </p>
+<table>
+  <tbody>
+    <tr>
+      <td><strong>键名</strong> </td>
+      <td><strong>类型</strong> </td>
+      <td><strong>属性</strong> </td>
+      <td><strong>解释</strong> </td>
+    </tr>
+    <tr>
+      <td>cid </td>
+      <td>int(10) </td>
+      <td>主键,非负,自增 </td>
+      <td>post表主键 </td>
+    </tr>
+    <tr>
+      <td>title </td>
+      <td>varchar(200) </td>
+      <td>可为空 </td>
+      <td>内容标题 </td>
+    </tr>
+    <tr>
+      <td>slug </td>
+      <td>varchar(128) </td>
+      <td>索引,可为空 </td>
+      <td>内容缩略名 </td>
+    </tr>
+    <tr>
+      <td>uri </td>
+      <td>varchar(200) </td>
+      <td>可为空 </td>
+      <td>资源描述符 </td>
+    </tr>
+    <tr>
+      <td>created </td>
+      <td>int(10) </td>
+      <td>索引,非负,可为空 </td>
+      <td>内容生成时的GMT   unix时间戳 </td>
+    </tr>
+    <tr>
+      <td>modified </td>
+      <td>int(10) </td>
+      <td>非负,可为空 </td>
+      <td>内容更改时的GMT   unix时间戳 </td>
+    </tr>
+    <tr>
+      <td>text </td>
+      <td>text </td>
+      <td>可为空 </td>
+      <td>内容文字 </td>
+    </tr>
+    <tr>
+      <td>tags </td>
+      <td>varchar(200) </td>
+      <td>可为空 </td>
+      <td>内容标签,冗余字段 </td>
+    </tr>
+    <tr>
+      <td>meta </td>
+      <td>int(10) </td>
+      <td>索引,非负,可为空 </td>
+      <td>首选项id,冗余字段 </td>
+    </tr>
+    <tr>
+      <td>author </td>
+      <td>int(10) </td>
+      <td>索引,非负,可为空 </td>
+      <td>内容所属用户id </td>
+    </tr>
+    <tr>
+      <td>template </td>
+      <td>varchar(32) </td>
+      <td>可为空 </td>
+      <td>内容使用的模板 </td>
+    </tr>
+    <tr>
+      <td>type </td>
+      <td>varchar(32) </td>
+      <td>索引 </td>
+      <td>内容类别 </td>
+    </tr>
+    <tr>
+      <td>password </td>
+      <td>varchar(32) </td>
+      <td>可为空 </td>
+      <td>受保护内容,此字段对应内容保护密码 </td>
+    </tr>
+    <tr>
+      <td>commentsNum </td>
+      <td>int(10) </td>
+      <td>非负,可为空 </td>
+      <td>内容所属评论数,冗余字段 </td>
+    </tr>
+    <tr>
+      <td>allowComment </td>
+      <td>enum(enable,   disable) </td>
+      <td>可为空 </td>
+      <td>是否允许评论 </td>
+    </tr>
+    <tr>
+      <td>allowPing </td>
+      <td>enum(enable,   disable) </td>
+      <td>可为空 </td>
+      <td>是否允许ping </td>
+    </tr>
+    <tr>
+      <td>allowFeed </td>
+      <td>enum(enable,   disable) </td>
+      <td>可为空 </td>
+      <td>允许出现在聚合中 </td>
+    </tr>
+  </tbody>
+</table>
+</p>
+<h3><A id="relationships表">relationships表</h3>
+<p> </p>
+<table>
+  <tbody>
+    <tr>
+      <td><strong>键名</strong> </td>
+      <td><strong>类型</strong> </td>
+      <td><strong>属性</strong> </td>
+      <td><strong>解释</strong> </td>
+    </tr>
+    <tr>
+      <td>cid </td>
+      <td>int(10) </td>
+      <td>主键,非负 </td>
+      <td>内容主键 </td>
+    </tr>
+    <tr>
+      <td>mid </td>
+      <td>int(10) </td>
+      <td>主键,非负 </td>
+      <td>项目主键 </td>
+    </tr>
+  </tbody>
+</table>
+</p>
+<h3><A id="metas表">metas表</h3>
+<p> </p>
+<table>
+  <tbody>
+    <tr>
+      <td><strong>键名</strong> </td>
+      <td><strong>类型</strong> </td>
+      <td><strong>属性</strong> </td>
+      <td><strong>解释</strong> </td>
+    </tr>
+    <tr>
+      <td>mid </td>
+      <td>int(10) </td>
+      <td>主键,非负 </td>
+      <td>项目主键 </td>
+    </tr>
+    <tr>
+      <td>name </td>
+      <td>varchar(200) </td>
+      <td>可为空 </td>
+      <td>名称 </td>
+    </tr>
+    <tr>
+      <td>slug </td>
+      <td>varchar(128) </td>
+      <td>索引,可为空 </td>
+      <td>项目缩略名 </td>
+    </tr>
+    <tr>
+      <td>type </td>
+      <td>varchar(32) </td>
+      <td>索引 </td>
+      <td>项目类型 </td>
+    </tr>
+    <tr>
+      <td>description </td>
+      <td>varchar(200) </td>
+      <td>可为空 </td>
+      <td>选项描述 </td>
+    </tr>
+    <tr>
+      <td>count </td>
+      <td>int(10) </td>
+      <td>非负,可为空 </td>
+      <td>项目所属内容个数 </td>
+    </tr>
+    <tr>
+      <td>sort </td>
+      <td>int(10) </td>
+      <td>非负,索引,可为空 </td>
+      <td>项目排序 </td>
+    </tr>
+  </tbody>
+</table>
+</p>
+<h3><A id="comments表">comments表</h3>
+<p> </p>
+<table>
+  <tbody>
+    <tr>
+      <td><strong>键名</strong> </td>
+      <td><strong>类型</strong> </td>
+      <td><strong>属性</strong> </td>
+      <td><strong>解释</strong> </td>
+    </tr>
+    <tr>
+      <td>coid </td>
+      <td>int(10) </td>
+      <td>主键,非负,自增 </td>
+      <td>comment表主键 </td>
+    </tr>
+    <tr>
+      <td>cid </td>
+      <td>int(10) </td>
+      <td>索引,非负 </td>
+      <td>post表主键,关联字段 </td>
+    </tr>
+    <tr>
+      <td>created </td>
+      <td>int(10) </td>
+      <td>非负,可为空 </td>
+      <td>评论生成时的GMT   unix时间戳 </td>
+    </tr>
+    <tr>
+      <td>author </td>
+      <td>varchar(200) </td>
+      <td>可为空 </td>
+      <td>评论作者 </td>
+    </tr>
+    <tr>
+      <td>mail </td>
+      <td>varchar(200) </td>
+      <td>可为空 </td>
+      <td>评论者邮件 </td>
+    </tr>
+    <tr>
+      <td>url </td>
+      <td>varchar(200) </td>
+      <td>可为空 </td>
+      <td>评论者网址 </td>
+    </tr>
+    <tr>
+      <td>ip </td>
+      <td>varchar(64) </td>
+      <td>可为空 </td>
+      <td>评论者ip地址 </td>
+    </tr>
+    <tr>
+      <td>agent </td>
+      <td>varchar(200) </td>
+      <td>可为空 </td>
+      <td>评论者客户端 </td>
+    </tr>
+    <tr>
+      <td>text </td>
+      <td>text </td>
+      <td>可为空 </td>
+      <td>评论文字 </td>
+    </tr>
+    <tr>
+      <td>type </td>
+      <td>enum('pingback',   'trackback', 'comment') </td>
+      <td>可为空 </td>
+      <td>评论类型 </td>
+    </tr>
+    <tr>
+      <td>status </td>
+      <td>enum('approved',   'spam', 'waiting') </td>
+      <td>可为空 </td>
+      <td>评论状态 </td>
+    </tr>
+    <tr>
+      <td>parent </td>
+      <td>int(10) </td>
+      <td>可为空 </td>
+      <td>父级评论 </td>
+    </tr>
+  </tbody>
+</table>
+</p>
+<h3><A id="options表">options表</h3>
+<p> </p>
+<table>
+  <tbody>
+    <tr>
+      <td><strong>键名</strong> </td>
+      <td><strong>类型</strong> </td>
+      <td><strong>属性</strong> </td>
+      <td><strong>解释</strong> </td>
+    </tr>
+    <tr>
+      <td>name </td>
+      <td>varchar(32) </td>
+      <td>主键 </td>
+      <td>配置名称 </td>
+    </tr>
+    <tr>
+      <td>user </td>
+      <td>int(10) </td>
+      <td>主键,非负 </td>
+      <td>配置所属用户,默认为0(全局配置) </td>
+    </tr>
+    <tr>
+      <td>value </td>
+      <td>text </td>
+      <td>可为空 </td>
+      <td>配置值 </td>
+    </tr>
+  </tbody>
+</table>
+</p>
+<h3><A id="users表">users表</h3>
+<p> </p>
+<table>
+  <tbody>
+    <tr>
+      <td><strong>键名</strong> </td>
+      <td><strong>类型</strong> </td>
+      <td><strong>属性</strong> </td>
+      <td><strong>解释</strong> </td>
+    </tr>
+    <tr>
+      <td>uid </td>
+      <td>int(10) </td>
+      <td>主键,非负,自增 </td>
+      <td>user表主键 </td>
+    </tr>
+    <tr>
+      <td>name </td>
+      <td>varchar(32) </td>
+      <td>唯一 </td>
+      <td>用户名称 </td>
+    </tr>
+    <tr>
+      <td>password </td>
+      <td>varchar(32) </td>
+      <td>可为空 </td>
+      <td>用户密码 </td>
+    </tr>
+    <tr>
+      <td>mail </td>
+      <td>varchar(200) </td>
+      <td>唯一 </td>
+      <td>用户的邮箱 </td>
+    </tr>
+    <tr>
+      <td>url </td>
+      <td>varchar(200) </td>
+      <td>可为空 </td>
+      <td>用户的主页 </td>
+    </tr>
+    <tr>
+      <td>screenName </td>
+      <td>varchar(32) </td>
+      <td>可为空 </td>
+      <td>用户显示的名称 </td>
+    </tr>
+    <tr>
+      <td>created </td>
+      <td>int(10) </td>
+      <td>非负,可为空 </td>
+      <td>用户注册时的GMT   unix时间戳 </td>
+    </tr>
+    <tr>
+      <td>activated </td>
+      <td>int(10) </td>
+      <td>非负,可为空 </td>
+      <td>最后活动时间 </td>
+    </tr>
+    <tr>
+      <td>logged </td>
+      <td>int(10) </td>
+      <td>非负,可为空 </td>
+      <td>上次登录最后活跃时间 </td>
+    </tr>
+    <tr>
+      <td>group </td>
+      <td>enum('administrator',   'editor', 'contributor', 'subscriber', 'visitor') </td>
+      <td><em>N/A</em> </td>
+      <td>用户组 </td>
+    </tr>
+  </tbody>
+</table>
+</p>
+</a>

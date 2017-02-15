@@ -1,0 +1,17 @@
+添加公告信息
+
+<?php
+
+ include("conn.php");                                    //包含数据库连接文件
+
+ $title=$_POST[title];                                    //公告主题
+
+ $content=$_POST[content];                              //公告内容
+
+ $time=date("Y-m-j");                                    //公告发布时间
+
+ mysql_query("insert into gonggao (title,content,time) values ('$title','$content','$time')",$conn);
+
+ echo "<script>alert('公告添加成功!');history.back();</script>";  //将公告保存到后台数据库
+
+?>

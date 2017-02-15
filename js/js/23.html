@@ -1,0 +1,56 @@
+<form  name="frm"  action="http://www.baidu.com" onsubmit="return show()">
+用户名： <input type="text" name="username" onblur="yan()" onfocus="clear1(this)" value="abc"><span id="user"> </span><br>
+	密码： <input type="password" onblur="yan1()" name="pass" value=""><br>
+	<input type="submit" name="submit1" value="提交">
+</form>	
+
+<script>
+	function yan()
+	{
+		if(window.document.frm.username.value=="")
+		{
+			alert("你输入的用户名为空!");
+		//	window.document.frm.username.focus();
+				
+		}
+	}	
+
+	function yan1()
+	{
+		if(window.document.frm.pass.value=="")
+		{
+			alert("你密码没有输入!!!");
+		//	window.document.frm.pass.focus();
+		
+		}
+
+	}
+
+	function clear1(obj)
+	{
+		obj.value="";
+	}
+	
+	function show()
+	{
+	
+		if(window.document.frm.username.value=="")
+		{
+		//	alert("你输入的用户名为空!");
+			window.document.frm.username.focus();
+
+			user.innerHTML="<font color=red>你输入的用户名为空!</font>"
+			return false;		
+		}
+
+		if(window.document.frm.pass.value=="")
+		{
+			alert("你密码没有输入!!!");
+			window.document.frm.pass.focus();
+			return false;
+		}
+
+		return true;
+	}
+
+</script>	

@@ -1,0 +1,22 @@
+<body onclick="show()">
+
+<img  onclick="view()" src="xiang.gif">
+
+
+<script>
+	function show()
+	{
+		alert("你点到body了");
+	}
+
+	function view()
+	{
+		alert("你点到一个图了");
+		window.event.cancelBubble=true;
+	}
+
+</script>	
+
+
+</body>
+

@@ -1,0 +1,25 @@
+记录编码		(下单时间)		年月日时分秒
+处理订单时间		(精确到分钟) 		年月日时间分
+发货时间		(精确到小时) 		年月月日时
+用户收货确认时间	(精确到小时) 		年月月日时
+物品种类
+物品数量
+物品当时单价
+销售方式
+最终发生额
+交易状态
+交易会员    
+
+9*1000 +998
+
+log_no			char(14)
+log_state		char(1)
+log_member		varchar(20)
+log_handletime		char(12)
+log_sendtime		char(10)
+log_fixtime		char(10)
+log_product		varchar(6000)	[记录产品编号，5位数字为一类，中间以逗号间隔]
+log_buynum		varchar(7000)	[最大允许单个种类购买十万件]
+log_sellprice		varchar(9998)
+log_sellstate		char(1)
+log_accrual		varchar(9998)

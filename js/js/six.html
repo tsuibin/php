@@ -1,0 +1,69 @@
+<body onkeydown="show()">
+
+<img id="one" style="position:absolute; top:0; left:0"  src="xiang.gif">
+
+
+<script>
+
+setInterval("run()",100);
+
+var tu=document.getElementById("one");
+
+
+	var x=0;
+	var y=0;
+	
+	dirx=1;
+	diry=1;
+
+	a=0;
+	b=0;
+function run()
+{
+	x=x+a*dirx;
+	y=y+b*diry;
+
+	tu.style.left=x;
+	tu.style.top=y;
+}
+
+
+
+
+
+
+function show()
+{
+	
+
+
+	switch(window.event.keyCode)
+	{
+		case 37:
+			dirx=-1
+
+			b=0;
+			a=5;
+			break;
+		case 38:
+			diry=-1
+			a=0;
+			b=5;
+			break;
+		case 39:
+			dirx=1;
+			b=0;
+			a=5;
+			break;
+		case 40:
+			diry=1;
+			a=0;
+			b=5;
+			break;
+	}
+}
+		
+</script>
+
+
+</body>	

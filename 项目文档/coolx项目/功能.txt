@@ -1,0 +1,109 @@
+2.1.3前台功能模块
+
+!!1导航：动态更新，自定义修改
+!!4公告模块：显示公告
+
+
+!!2会员模块：会员注册，登陆验证，资料修改，会员交易记录
+
+
+!!3商品模块：商品显示（最后添加的**个）搜索商品模块：热度排序（默认），价格排序，上架时间排序，销量排序，按商品名称和描述信息搜索,商品评论
+
+
+!!6购物车系统
+
+
+
+!!5客服模块：用户投诉，在线帮助
+
+
+
+
+2.1.4后台功能模块
+
+!!1系统管理：支持在线更新网站风格，广告，版权信息，协议。(css,tb_adv,tb_copyright,tb_agreement)
+!!6公告系统 系统管理员发布(支持上传图片 html风格)、修改、删除、检索（检索方式：发布日期）公告(tb_public;search,)
+
+
+!!2会员管理模块：登录验证、修改用户权限（一般管理员、会员），编辑用户（查找、添加、删除、编辑用户资料）(tb_member;search)
+
+
+!!3商品管理模块：添加(支持图片上传)，更改，删除，商品审核（审核通过的可在前台显示）。(tb_produce,upload images,)
+!!4商品检索：商品发布时间，商品分类，商品状态(search;select)
+!!5评论模块：添加评论，修改评论，删除评论(tb_message)
+
+
+!!10购物车模块
+!!7交易记录:记录交易信息，可以检索，可以按日期、商品、用户、商品类别、交易状态（完成、已发货、待发货），可以修改交易状态 ，发货后不可修改交易状态;订单(tb_bizlog;search,tb_order)
+
+
+!!8用户投诉处理模块：投诉状态显示（未处理，已接受，已处理），编辑投诉状态，回复用户投诉(tb_feedback)
+!!9在线帮助管理模块：编辑帮助文档。(tb_help)
+
+
+用户任务分配
+#############################################################################################
+
+秦宇光：		前台5		后台8、9
+徐斌  ：		前台1、4	后台1、6
+包子  ：		前台3		后台3、4
+张扩  ：		前台6		后台7、10
+小黑  ：		前台2		后台2、5
+
+
+主要模块列表
+#############################################################################################
+database cx 数据库部分		中文名模块名	前台文件名		后台管理文件名
+
+徐斌	tb_adv  		 广告模块	adv.php			admin_adv.php
+徐斌	tb_copyright		 版权模块	copyright.php		admin_copyright.php
+徐斌	tb_agreement		 协议模块	agreement.php		admin_agreement.php
+徐斌	tb_public		 公告模块	public.php		admin_public.php
+
+陈乔华	tb_member 		 会员管理模块	member.php		admin_member.php
+陈乔华	tb_message 		 评论模块	message.php		admin_message.php
+	
+包海飞	tb_product 		 商品管理模块	product.php		admin_product.php
+
+
+秦宇光	tb_complain 		 投诉处理模块	complain.php		admin_complain.php
+秦宇光	tb_help			 在线帮助模块	help.php		admin_help.php
+
+张扩	tb_bizlog		 购物车处理模块	shoppingcart.php	admin_shopping.php
+张扩	tb_orders		 订单系统	orders.php		admin_orders.php
+
+其他数据库
+#############################################################################################
+
+徐斌	tb_cate			产品分类	cate.php
+徐斌	tb_catedesc		分类菜单	catedesc.php
+
+秦宇光	tb_session		session
+包海飞	tb_session		session
+徐斌	tb_session		session
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

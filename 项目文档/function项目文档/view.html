@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>PHP帮助</title>
+<style type="text/css">
+body{ margin: 20px auto 25px; text-align:center; width:900px;}
+#page{ text-align:left;}
+ul,li,form{ margin:0px; padding:0px;}
+.code{ margin:5px 0px; padding:5px 10px; background:#e0e0e0; }
+h3{ margin:2px 0;}
+h5{margin:10px 0px 0px; font-weight:normal;}
+pre{ margin:0px;}
+</style>
+</head>
+
+<body>
+
+<div id="page">
+<div>
+    <form id="form1" name="form1" method="post" action="">
+		<h3>函数名称mysql_connect</h3>
+		函数类型:<br />
+		数据库<br />
+		函数基本说明/注释/<br />
+		resource <strong>mysql_connect</strong> ( [string server [, string   username [, string password [, bool new_link [, int client_flags]]]]] )<br />
+		如果成功则返回一个 MySQL 连接标识，失败则返回 <strong>FALSE</strong>。<br />
+		函数原形/范例<br />
+        <h5>例子 1. MySQL 连接例子</h5>
+        <div class="code">
+        <pre>&lt;?php               
+   $link   = mysql_connect(&quot;localhost&quot;, &quot;mysql_user&quot;, &quot;mysql_password&quot;)    
+   or   die(&quot;Could not connect: &quot; . mysql_error());<br />   print (&quot;Connected   successfully&quot;);<br />   mysql_close($link);<br />?&gt;</pre>
+	    </div>
+        返回类型 资源<br />
+      适用PHP版本: PHP 3, PHP 4, PHP 5<br />
+      <br />
+      常用指数:1 2 3 4 5 <br />
+      详细说明<br />
+    <strong>mysql_connect()</strong> 建立一个到 MySQL   服务器的连接。当没有提供可选参数时使用以下默认值：server =   'localhost:3306'，username = 服务器进程所有者的用户名，password = 空密码。
+    server 参数可以包括端口号。例如 &quot;hostname:port&quot;   或者是到本地套接字的路径，例如本机上的 &quot;:/path/to/socket&quot;。
+    <div>
+     <strong>注: </strong>无论指定 &quot;localhost&quot; 或者 &quot;localhost:port&quot; 作为 server，MySQL 客户端库将覆盖之并尝试连接到本地套接字（Windows 中的名字管道）。如果希望使用   TCP/IP 连接，用 &quot;127.0.0.1&quot; 替代 &quot;localhost&quot;。如果 MySQL 客户端库试图连接到错误的本地套接字，则应该在 PHP 配置中将   mysql.default_host 设为正确的路径并使 server 字段为空。 
+        &quot;:port&quot; 的支持是 PHP 3.0B4 起加入的。&quot;:/path/to/socket&quot; 的支持是 PHP 3.0.10 起加入的。 
+        可以在函数名前加上 <a href="file:///E|/function/language.operators.errorcontrol.html">@</a> 来抑制失败时产生的错误信息。
+    如果用同样的参数第二次调用。 <strong>mysql_connect()</strong>，将不会建立新连接，而将返回已经打开的连接标识。参数   new_link 改变此行为并使 <strong>mysql_connect()</strong> 总是打开新的连接，甚至当 <strong>mysql_connect()</strong> 曾在前面被用同样的参数调用过。参数 client_flags   可以是以下常量的组合：MYSQL_CLIENT_COMPRESS，MYSQL_CLIENT_IGNORE_SPACE 或者   MYSQL_CLIENT_INTERACTIVE。 
+    一旦脚本结束，到服务器的连接就会被关闭。除非之前已经调用了 <a href="file:///E|/function/function.mysql-close.html"><strong>mysql_close()</strong></a> 来关闭它。	 </div>
+    <div align="left">
+      相关函数<br />
+      </textarea>
+      参见 <a href="file:///E|/function/function.mysql-pconnect.html"><strong>mysql_pconnect()</strong></a> 和 <a href="file:///E|/function/function.mysql-close.html"><strong>mysql_close()</strong></a>。    
+    </div>
+ 
+  </form>
+</div>
+<h4>用户例子</h4>
+<div class="code">
+<pre>
+&lt;?php <br />   $connect=mysql_connect(&quot;localhost&quot;,&quot;root&quot;,&quot;&quot;);<br />   mysql_select_db(&quot;md5&quot;,$connect);<br />   $num=&quot;9999999&quot;;<br />   for($i=0;$i&lt;=$num;$i++){<br />      $pass=md5($i)<br />      $into=&quot;insert into truepassword (id,password) values ('$i','$pass')&quot;; <br />      $resu=mysql_query($into,$connect);          
+      if($resu){ <br />         echo &quot;输入&quot;.$i.&quot;成功&lt;br /&gt;&quot;; <br />      }else{             
+         echo &quot;输入&quot;.$i.&quot;失败&lt;br /&gt;&quot;;}<br />   }     
+?&gt;
+</pre>
+</div>
+</div>
+</body>
+</html>

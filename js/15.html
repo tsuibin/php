@@ -1,0 +1,156 @@
+
+
+<html>
+	<style>
+		#biaoti {
+			width:510px;
+			height:23px;
+			margin:0px;
+			padding:0px;
+			text-align:center;
+		}
+
+		#biaoti ul {
+			list-style:none;
+			margin:0px;
+			padding:0px;
+		}
+
+		#biaoti ul li {
+			float:left;
+			margin:0px;
+			padding:0px;
+			width:100px;
+		}
+
+		#biaoti li h3 {
+			font-size:13px;
+			margin:0px;
+			padding:0px;
+			height:23px;
+			width:99px;
+			line-height:23px;
+			background:green;
+		}
+
+		#biaoti .bgc {
+			background:yellow;
+		}
+
+
+		#ti div {
+			display:none;
+			width:500px;
+			height:200px;
+			border:solid 1px green;
+		
+		}
+
+		#ti .view {
+			display:block;
+		}
+
+		
+
+
+	</style>	
+
+<div id="biaoti">
+	<ul>
+		<li onmouseover="show(0)"><a href="#"><h3 class="bgc">第一页</h3></a></li>
+		<li onmouseover="show(1)"><a href="#"><h3>第二页</h3></a></li>
+		<li onmouseover="show(2)"><a href="#"><h3>第三页</h3></a></li>
+		<li onmouseover="show(3)"><a href="#"><h3>第四页</h3></a></li>
+		<li onmouseover="show(4)"><a href="#"><h3>第五页</h3></a></li>
+
+	</ul>	
+</div>
+
+<div id="ti">
+
+	<div class="view">
+		aaaaaaaaaaaaaaaaa<br>
+		aaaaaaaaaaaaaaaaa<br>
+		aaaaaaaaaaaaaaaaa<br>
+		aaaaaaaaaaaaaaaaa<br>
+		aaaaaaaaaaaaaaaaa<br>
+		aaaaaaaaaaaaaaaaa<br>
+		aaaaaaaaaaaaaaaaa<br>
+		aaaaaaaaaaaaaaaaa<br>
+		
+	</div>
+
+	<div>
+		bbbbbbbbbbbbbbbbbbbb<br>
+		bbbbbbbbbbbbbbbbbbbb<br>
+		bbbbbbbbbbbbbbbbbbbb<br>
+		bbbbbbbbbbbbbbbbbbbb<br>
+		bbbbbbbbbbbbbbbbbbbb<br>
+		bbbbbbbbbbbbbbbbbbbb<br>
+		bbbbbbbbbbbbbbbbbbbb<br>
+		bbbbbbbbbbbbbbbbbbbb<br>
+	</div>	
+
+	<div>
+		cccccccccccccccccccccc<br>
+		cccccccccccccccccccccc<br>
+		cccccccccccccccccccccc<br>
+		cccccccccccccccccccccc<br>
+		cccccccccccccccccccccc<br>
+		cccccccccccccccccccccc<br>
+		cccccccccccccccccccccc<br>
+		cccccccccccccccccccccc<br>
+		cccccccccccccccccccccc<br>
+
+	</div>	
+
+	<div>
+		ddddddddddddddddddddd<br>
+		ddddddddddddddddddddd<br>
+		ddddddddddddddddddddd<br>
+		ddddddddddddddddddddd<br>
+		ddddddddddddddddddddd<br>
+		ddddddddddddddddddddd<br>
+		ddddddddddddddddddddd<br>
+
+	</div>	
+
+
+	<div>
+		eeeeeeeeeeeeeeeeeeeeeee<br>
+		eeeeeeeeeeeeeeeeeeeeeee<br>
+		eeeeeeeeeeeeeeeeeeeeeee<br>
+		eeeeeeeeeeeeeeeeeeeeeee<br>
+		eeeeeeeeeeeeeeeeeeeeeee<br>
+		eeeeeeeeeeeeeeeeeeeeeee<br>
+		eeeeeeeeeeeeeeeeeeeeeee<br>
+		eeeeeeeeeeeeeeeeeeeeeee<br>
+
+	</div>	
+</div>	
+
+
+<script>
+	var h3arr=document.getElementById("biaoti").getElementsByTagName("h3");
+	var tic=document.getElementById("ti").getElementsByTagName("div");
+
+	function show(num)
+	{
+		for(var i=0; i<h3arr.length; i++)
+		{
+			if(i==num)
+			{
+				h3arr[i].style.backgroundColor="yellow";
+				tic[i].style.display="block";
+			}else
+			{
+				h3arr[i].style.backgroundColor="green";
+				tic[i].style.display="none";
+			}
+		}		
+	
+	}
+
+</script>	
+
+</html>	

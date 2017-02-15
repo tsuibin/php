@@ -1,0 +1,27 @@
+<body onmousemove="show()">
+
+<img id="one" style="position:absolute; left:-200; top:-200;"  src="xiang.gif">
+
+	<script>
+		var tu=document.getElementById("one");
+
+		function show()
+		{
+			var clientx=window.event.clientX;
+			var clienty=window.event.clientY;
+
+			var screenx=window.event.screenX;
+			var screeny=window.event.screenY;
+			
+			tu.style.left=clientx+5;
+			tu.style.top=clienty+5;
+
+
+
+			window.status="clientx:"+clientx+", clienty: "+clienty+", screenx:"+screenx+", screenY:"+screeny;
+		}
+
+	</script>	
+
+</body>
+

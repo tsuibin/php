@@ -1,0 +1,27 @@
+<form name="frm">
+<select name="sel" onchange="show(selectedIndex)">
+	<option>--请选择图片--</option>
+	<option>第一个图</option>
+	<option>第二个图</option>
+	<option>第三个图</option>
+	<option>第四个图</option>
+	<option>第五个图</option>
+	<option>第六个图</option>
+
+</select>
+</form>	
+
+<hr>
+
+<div id="one">
+
+</div>	
+
+<script>
+	function show(num)
+	{
+		
+		one.innerHTML="<img width=250 alt='this tu "+num+"' src='tu"+num+".jpg'>";
+	}
+
+</script>	
